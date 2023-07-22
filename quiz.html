@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            display: none;
+            margin-bottom: 10px;
+        }
+
+        .answer-container {
+            display: none;
+        }
+
+        .answers {
+            list-style: none;
+            padding: 0;
+        }
+
+        .answers li {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #timer {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization Survey</h1>
+    <div class="trial-counter">1/6</div>
+
+    <!-- Question 1 -->
+    <div class="question-container">
+        <div class="question-text">
+            1) Who sold more, Archie or Oliver?
+        </div>
+        <button class="btn reveal-btn1" onclick="revealVisualization(1)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer1" style="display: none;">
+            <img src=images\q1.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer1" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer1" value="Archie"> Archie</label></li>
+                <li><label><input type="radio" name="answer1" value="Oliver"> Oliver</label></li>
+            </ul>
+            <button class="btn submit-btn" onclick="submitAnswer(1)">Submit Answer</button>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-container">
+        <div class="question-text">
+            2) What proportion of Ava’s sales did Mia sell?
+        </div>
+        <button class="btn reveal-btn2" onclick="revealVisualization(2)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer2" style="display: none;">
+            <img src="images\q2.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer2" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="Less than 50%"> Less than 50%</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> About 30%</label></li>
+                <li><label><input type="radio" name="answer2" value="About 60%"> About 60%</label></li>
+                <li><label><input type="radio" name="answer2" value="100%"> 100%</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> About 30%</label></li>
+            </ul>
+            <button class="btn submit-btn" onclick="submitAnswer(2)">Submit Answer</button>
+        </div>
+    </div>
+
+     <!-- Question 3 -->
+     <div class="question-container">
+        <div class="question-text">
+            3)	Who sold the most?
+        </div>
+        <button class="btn reveal-btn2" onclick="revealVisualization(3)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer2" style="display: none;">
+            <img src="images\q3.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer2" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="Less than 50%">Archie</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%">Oliver</label></li>
+                <li><label><input type="radio" name="answer2" value="About 60%"> Mia</label></li>
+                <li><label><input type="radio" name="answer2" value="100%"> George</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> Ava</label></li>
+            </ul>
+            <button class="btn submit-btn" onclick="submitAnswer(3)">Submit Answer</button>
+        </div>
+    </div>
+
+     <!-- Question 4 -->
+     <div class="question-container">
+        <div class="question-text">
+        4)	Who sold the less, Archie or Ava
+        </div>
+        <button class="btn reveal-btn2" onclick="revealVisualization(4)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer2" style="display: none;">
+            <img src="images\q4.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer2" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="Less than 50%"> Archive</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> Ava</label></li>
+            </ul>
+            <button class="btn submit-btn" onclick="submitAnswer(4)">Submit Answer</button>
+        </div>
+    </div>
+
+     <!-- Question 5 -->
+     <div class="question-container">
+        <div class="question-text">
+            5)	Who sold the least?
+        </div>
+        <button class="btn reveal-btn2" onclick="revealVisualization(5)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer2" style="display: none;">
+            <img src="images\q5.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer2" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="Less than 50%">Archie</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%">Oliver</label></li>
+                <li><label><input type="radio" name="answer2" value="About 60%"> Mia</label></li>
+                <li><label><input type="radio" name="answer2" value="100%"> George</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> Ava</label></li>
+            <button class="btn submit-btn" onclick="submitAnswer(5)">Submit Answer</button>
+        </div>
+    </div>
+
+     <!-- Question 6 -->
+     <div class="question-container">
+        <div class="question-text">
+            6)	How many times more did Oliver sell than Mia?
+        </div>
+        <button class="btn reveal-btn2" onclick="revealVisualization(6)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer2" style="display: none;">
+            <img src="images\q62.png" alt="Visualization">
+            <img src="images\q6.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer2" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="Less than 50%"> o	1.5x</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> 2x </label></li>
+                <li><label><input type="radio" name="answer2" value="About 60%">3x</label></li>
+                <li><label><input type="radio" name="answer2" value="100%"> Less than 2x</label></li>
+        
+            </ul>
+            <button class="btn submit-btn" onclick="submitAnswer(6)">Submit Answer</button>
+        </div>
+    </div>
+
+     <!-- Question 7 -->
+     <div class="question-container">
+        <div class="question-text">
+            7)	Who sold more, Archie or George?
+        </div>
+        <button class="btn reveal-btn2" onclick="revealVisualization(7)">Reveal Visualization</button>
+        <div class="image-container" id="imageContainer2" style="display: none;">
+            <img src="images\q7.png" alt="Visualization">
+        </div>
+        <div class="answer-container" id="answerContainer2" style="display: none;">
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="Less than 50%"> Archie</label></li>
+                <li><label><input type="radio" name="answer2" value="About 30%"> George</label></li>
+              
+            </ul>
+            <button class="btn submit-btn" onclick="submitAnswer(7)">Submit Answer</button>
+        </div>
+    </div>
+
+
+    <script>
+        let currentTrial = 1;
+        const totalTrials = 6;
+        const timerDuration = 120; // 2 minutes in seconds
+        let timerInterval;
+        let timerValue = timerDuration;
+        let timerVisible = false;
+
+        function revealVisualization(trialNumber) {
+            if (!timerVisible) {
+                startTimer();
+                timerVisible = true;
+            }
+            document.querySelector(`.reveal-btn${trialNumber}`).style.display = "none";
+            document.querySelector(`#imageContainer${trialNumber}`).style.display = "block";
+            document.querySelector(`#answerContainer${trialNumber}`).style.display = "block";
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            timerValue--;
+            document.querySelector("#timer").textContent = timerValue;
+            if (timerValue <= 0) {
+                clearInterval(timerInterval);
+                submitAnswer(currentTrial);
+            }
+        }
+
+        function submitAnswer(trialNumber) {
+            clearInterval(timerInterval);
+            timerVisible = false;
+            // Handle the answer submission here
+            // For simplicity, just go to the next question
+            if (currentTrial < totalTrials) {
+                currentTrial++;
+                timerValue = timerDuration;
+                document.querySelector(`.question-container:nth-child(${currentTrial})`).style.display = "block";
+                document.querySelector(`#imageContainer${trialNumber}`).style.display = "none";
+                document.querySelector(`#answerContainer${trialNumber}`).style.display = "none";
+                document.querySelector("#timer").textContent = timerValue;
+                document.querySelector(".trial-counter").textContent = `${currentTrial}/${totalTrials}`;
+            } else {
+                // All questions are complete
+                alert("Survey completed!");
+            }
+        }
+    </script>
+</body>
+</html>

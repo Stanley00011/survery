@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization Survey</h1>
+    <h2>Demographic Question</h2>
+    <form>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="sex">Sex:</label>
+        <input type="radio" id="male" name="man" value="male" required>
+        <label for="male">male</label>
+
+        <input type="radio" id="male" name="woman" value="female" required>
+        <label for="male">female :or</label>
+
+        <input type="text" id="sex" name="sex" required>
+        
+
+        <label for="education">Highest level of Education:</label>
+        <select id="education" name="education" required>
+            <option value="">Select an option</option>
+            <option value="No schooling completed">No schooling completed</option>
+            <option value="Grades 1 through 11">Grades 1 through 11</option>
+            <option value="12th grade—no diploma">12th grade—no diploma</option>
+            <option value="Regular high school diploma">Regular high school diploma</option>
+            <option value="GED or alternative credentiall">GED or alternative credentiall</option>
+            <option value="Some college credit, but less than 1 year of college">Some college credit, but less than 1 year of college</option>
+            <option value="1 or more years of college credit, no degree">1 or more years of college credit, no degree</option>
+            <option value="Associates degree (for example: AA, AS)"> Associates degree (for example: AA, AS)</option>
+            <option value="Bachelor’s degree (for example: BA. BS)">Bachelor’s degree (for example: BA. BS)</option>
+            <option value="Master’s degree (for example: MA, MS, MEng, MEd, MSW, MBA)">Master’s degree (for example: MA, MS, MEng, MEd, MSW, MBA)</option>
+            <option value="Professional degree beyond bachelor’s degree (for example: MD, DDS, DVM, LLB, JD)">Professional degree beyond bachelor’s degree (for example: MD, DDS, DVM, LLB, JD)</option>
+            <option value="Doctorate degree (for example, PhD, EdD)">Doctorate degree (for example, PhD, EdD)</option>
+        </select>
+
+        <label>How familiar are you with numbers presented in charts?</label>
+        <input type="radio" id="notFamiliar" name="familiarity" value="Not familiar" required>
+        <label for="notFamiliar">Not familiar</label>
+
+        <input type="radio" id="somewhatFamiliar" name="familiarity" value="Somewhat familiar" required>
+        <label for="somewhatFamiliar">Somewhat familiar</label>
+
+        <input type="radio" id="veryFamiliar" name="familiarity" value="Very familiar" required>
+        <label for="veryFamiliar">Very familiar</label>
+
+        <a href="quiz.html" class="btn">Start Quiz</a>
+    </form>
+</body>
+</html>

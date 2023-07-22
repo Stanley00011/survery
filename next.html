@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .survey-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            height: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4CAF50;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .survey-content {
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+       
+        form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        form ol {
+            list-style: none;
+            padding: 0;
+        }
+
+        form li {
+            margin-bottom: 20px;
+        }
+
+        form strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form label {
+            display: block;
+            padding: 8px 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form label input[type="radio"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-header">
+        Consent Form
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="progress" style="width: 20%;"></div>
+    </div>
+
+    <!-- Page 2: Consent Form -->
+    <div class="survey-content" id="consentForm" style="display: none;">
+    <form>
+            <ol>
+                <li>
+                    <strong>1. I confirm that I have read the participant information sheet version 1.0, date 06 July 2023 for the above study. Required</strong><br>
+                    <label><input type="radio" name="confirm_read" value="Yes" required> Yes</label>
+                    <label><input type="radio" name="confirm_read" value="No"> No</label>
+                </li>
+                <li>
+                    <strong>2. I have had the opportunity to consider the information, ask questions and have had these answered satisfactorily.</strong><br>
+                    <label><input type="radio" name="opportunity" value="Yes"> Yes</label>
+                    <label><input type="radio" name="opportunity" value="No"> No</label>
+                </li>
+                <li>
+                    <strong>3. I understand that my participation is voluntary and that I am free to withdraw at any time without giving any reason, without my legal rights being affected.</strong><br>
+                    <label><input type="radio" name="opportunity" value="Yes"> Yes</label>
+                    <label><input type="radio" name="opportunity" value="No"> No</label>
+                </li>
+
+                <li>
+                    <strong>4 . I agree to participate in the project to the extent of the activities described to me in the 
+                        above participant information sheet.</strong><br>
+                    <label><input type="radio" name="opportunity" value="Yes"> Yes</label>
+                    <label><input type="radio" name="opportunity" value="No"> No</label>
+                </li>
+
+                <li>
+                    <strong>5. I agree to take part in this survey and for the anonymized data to be used as the researcher 
+                        sees fit, including publication.</strong><br>
+                    <label><input type="radio" name="opportunity" value="Yes"> Yes</label>
+                    <label><input type="radio" name="opportunity" value="No"> No</label>
+                </li>
+
+                <li>
+                    <strong>6. I give permission for the researcher named in the participant information sheet to contact me in the future about this research or other research opportunities.</strong><br>
+                    <label><input type="radio" name="opportunity" value="Yes"> Yes</label>
+                    <label><input type="radio" name="opportunity" value="No"> No</label>
+                </li>
+
+                <li>
+                    <strong>7.I give permission for a fully anonymised version of the data I provide to be deposited in an Open Access repository so that it can be used for future research and learning.</strong><br>
+                    <label><input type="radio" name="opportunity" value="Yes"> Yes</label>
+                   
+                </li>
+
+             <li>
+                    <strong>8. I agree that I have read and understand the information above. Required</strong><br>
+                    <label><input type="radio" name="agree_read" value="Yes" required> Yes</label>
+                    <label><input type="radio" name="agree_read" value="No"> No</label>
+                </li>
+            </ol>
+            <a href="page3.html" class="btn">Next</a>
+            <a href="participant_info.html" class="btn">Previous</a>
+        </form>
+    </div>
+
+
+
+    <script>
+        let currentPage = 2; 
+        const totalPages = 3; 
+    
+        function navigateToPage(pageId) {
+            document.getElementById(`page${currentPage}`).style.display = "none";
+            document.getElementById(pageId).style.display = "block";
+    
+            if (pageId === "page3") {
+                currentPage = totalPages;
+            } else if (pageId === "consentForm") {
+                currentPage = 2;
+            } else {
+                currentPage = parseInt(pageId.substr(4)); 
+            }
+    
+            updateProgress();
+        }
+    
+        function updateProgress() {
+            const progress = (currentPage / totalPages) * 100;
+            document.getElementById("progress").style.width = progress + "%";
+            document.getElementById("progress-text").textContent = `${progress}% complete`;
+        }
+    </script>
+</body>
+</html>

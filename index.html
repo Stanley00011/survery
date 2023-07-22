@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .survey-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            height: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4CAF50;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .survey-content {
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        } 
+    </style>
+</head>
+<body>
+    <div class="survey-header">
+        Consent Form
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="progress" style="width: 0;"></div>
+    </div>
+    <div class="progress-text">0% complete</div>
+    <!-- Participant Information -->
+    <div class="survey-content" id="participantInfo">
+        <h2>Participant Information</h2>
+        <ol>
+            <li>
+                <strong>Research Invitation</strong><br>
+                My name is Olasunkanmi Mujib Oso, and I am a MSc Data Science student. You are cordially invited to participate in my final year project, "What makes an effective data visualisation?" My research focuses on how to provide data visualisations in an effective manner.
+            </li>
+            <li>
+                <strong>Reason for Invite</strong><br>
+                You have been chosen as I am looking to recruit healthy participants, particularly aged 18-65 years who are familiar with numbers in tables and charts. To create excellent data visualisations, I have specifically chosen this demographic.
+            </li>
+            <li>
+                <strong>Am I Required to Participate?</strong><br>
+                Participation is voluntary. To confirm that you are willing to participate, we will need you to sign a consent form. You may leave at any time without giving a reason.
+            </li>
+            <li>
+                <strong>What Will I Need to Do?</strong><br>
+                The project will last 3 months, and as part of this project, participants will be requested to complete a demographic questionnaire, including fundamental details such as age, gender, and their responses to questions about visualization as part of this experiment. Participants will be given a consent form to complete before any data is gathered that will detail their consent to participate, right to withdraw at any time (without cause), and understanding of the research's basic tenets.
+            </li>
+
+            <li>
+             <strong>Are there any risks if I participate? </strong><br>
+             There is no known risk associated with this research project.
+             </li>
+
+            <li>
+             <strong>Are there any advantages if I participate? </strong><br>
+             Yes, participant will contribute to knowledge and research development in the field of visualisation. Also, a token will be given as incentive for time taken to take part in the research.
+            </li>
+
+        <li>
+        <strong>What will happen with the data I provide? </strong><br>
+        When you agree to participate in this research, we will collect from you personally 
+        identifiable information. 
+        The Manchester Metropolitan University (‘the University’) is the Data Controller in respect 
+        of this research and any personal data that you provide as a research participant. 
+        The University is registered with the Information Commissioner’s Office (ICO) and manages 
+        personal data in accordance with the General Data Protection Regulation (GDPR) and the 
+        University’s Data Protection Policy. 
+        We collect personal data as part of this research (such as gender or age). As a public authority 
+        acting in the public interest, we rely upon the ‘public task’ lawful basis. When we collect 
+        special category data (such as medical information or ethnicity) we rely upon the research
+        and archiving purposes in the public interest lawful basis. 
+        Your rights to access, change or move your information are limited, as we need to manage 
+        your information in specific ways for the research to be reliable and accurate. If you 
+        withdraw from the study, we will delete the information about you that we have already 
+        obtained. 
+        We will not share your personal data collected in this form with any third parties.
+        If your data is shared this will be under the terms of a Research Collaboration Agreement 
+        which defines use and agrees confidentiality and information security provisions. It is the 
+        University’s policy to only publish anonymised data unless you have given your explicit 
+        written consent to be identified in the research. The University never sells personal data to 
+        third parties.
+        We will only retain your personal data for as long as is necessary to achieve the research 
+        purpose. For further information about use of your personal data and your data protection 
+        rights please see the <a href="https://www.mmu.ac.uk/data-protection" target="_blank">University’s Data Protection Pages</a>.
+        </li>
+
+        <li>
+            <strong>What will happen to the results of the research study? </strong><br>
+            Results may be shared at conferences and or publications. All data will be anonymised, and no participant is identifiable.
+       </li>
+       
+       <li>
+        <strong>Who has reviewed this research project?
+        </strong><br>
+        This study has been reviewed by my supervisor and related research ethics committee at 
+        Manchester Metropolitan University.
+   </li>
+
+   <li>
+    <strong> Who do I contact if I have concerns about this study or wish to complain?
+    </strong><br>
+    If you have any concerns regarding the personal data collected from you, our Data Protection Officer can be contacted using the <a href="mailto:info@legal@mmu.ac.uk"><i class=""></i> legal@mmu.ac.uk</a>e-mail address, project supervisor <a href="mailto:a.kleerekoper@mmu.ac.uk"><i class=""></i>a.kleerekoper@mmu.ac.uk</a> and by calling 0161 247 3331 or in writing to: Data Protection Officer, Legal Services, All Saints Building, Manchester Metropolitan University, Manchester, M15 6BH. You also have a right to lodge a complaint in respect of the processing of your personal data with the Information Commissioner’s Office as the supervisory authority. Please see: <a href="https://ico.org.uk/global/contact-us" target="_blank">https://ico.org.uk/global/contact-us</a> 
+</li>
+            
+          
+        </ol>
+    </div>
+
+  
+
+    
+    <button class="btn" onclick="navigateToPage('next.html')">Next</button>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function navigateToPage(pageId) {
+            document.getElementById("next.html").style.display = "none";
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page3").style.display = "none";
+
+            if (pageId === "next.html") {
+                currentPage += 1;
+                if (currentPage > totalPages) {
+                    currentPage = 1;
+                }
+            }
+
+            if (currentPage === 1) {
+                document.getElementById("next.html").style.display = "block";
+            } else if (currentPage === 2) {
+                document.getElementById("page2").style.display = "block";
+            } else if (currentPage === 3) {
+                document.getElementById("page3").style.display = "block";
+            }
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = (currentPage / totalPages) * 100;
+            document.getElementById("progress").style.width = progress + "%";
+            document.getElementById("progress-text").textContent = `${progress}% complete`;
+        }
+    </script>
+</body>
+</html>
